@@ -13,3 +13,16 @@ const messageEl = document.querySelector<HTMLHeadingElement>('#message')
 
 // Event Listeners ----------------------------
 // Functions ----------------------------------
+
+function init():void {
+  board = [
+    0, 0, 0,
+    0, 0, 0,
+    0, 0, 0,
+  ],
+  turn = 1,
+  winner = false,
+  tie = false
+}
+
+init()
