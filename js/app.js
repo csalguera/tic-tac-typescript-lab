@@ -67,6 +67,7 @@ function handleClick(evt) {
     placePiece(sqIdx);
     checkForTie();
     checkForWinner();
+    switchPlayerTurn();
     render();
 }
 function placePiece(sqIdx) {
@@ -83,4 +84,9 @@ function checkForWinner() {
             winner = true;
         }
     });
+}
+function switchPlayerTurn() {
+    if (!winner)
+        turn *= -1;
+    return;
 }
