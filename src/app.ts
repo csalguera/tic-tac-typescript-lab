@@ -24,6 +24,11 @@ const squareEls = document.querySelectorAll<HTMLDivElement>('.sqr')
 const messageEl = document.querySelector<HTMLHeadingElement>('#message')!
 
 // Event Listeners ----------------------------
+
+squareEls.forEach(sqEl => {
+  sqEl.addEventListener('click', handleClick)
+})
+
 // Functions ----------------------------------
 
 function init():void {
@@ -70,4 +75,8 @@ function updateMessage():void {
   messageEl.textContent = `It's a tie!`
   :
   messageEl.textContent = `Congratulations Player ${turn === 1 ? 1 : 2}, you won!`
+}
+
+function handleClick(evt: MouseEvent):void {
+  console.log(evt.target);
 }

@@ -16,6 +16,9 @@ let board, turn, winner, tie;
 const squareEls = document.querySelectorAll('.sqr');
 const messageEl = document.querySelector('#message');
 // Event Listeners ----------------------------
+squareEls.forEach(sqEl => {
+    sqEl.addEventListener('click', handleClick);
+});
 // Functions ----------------------------------
 function init() {
     board = [
@@ -56,4 +59,7 @@ function updateMessage() {
                     messageEl.textContent = `It's a tie!`
                 :
                     messageEl.textContent = `Congratulations Player ${turn === 1 ? 1 : 2}, you won!`;
+}
+function handleClick(evt) {
+    console.log(evt.target);
 }
