@@ -62,4 +62,6 @@ function updateMessage() {
 }
 function handleClick(evt) {
     const sqIdx = parseInt(evt.target.id.replace('sq', ''));
+    if (squareEls[sqIdx] || winner)
+        return;
 }

@@ -79,4 +79,6 @@ function updateMessage():void {
 
 function handleClick(evt: MouseEvent):void {
   const sqIdx:number = parseInt((evt.target as HTMLButtonElement).id.replace('sq', ''))
+
+  if (squareEls[sqIdx] || winner) return
 }
