@@ -83,6 +83,7 @@ function handleClick(evt: MouseEvent):void {
   if (board[sqIdx] || winner) return
   placePiece(sqIdx)
   checkForTie()
+  checkForWinner()
   render()
 }
 
@@ -93,4 +94,12 @@ function placePiece(sqIdx: number):void {
 function checkForTie():void {
   if (board.includes(0)) return
   tie = true
+}
+
+function checkForWinner():void {
+  winningCombos.forEach((combo: any) => {
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
+      winner = true
+    }
+  })
 }
