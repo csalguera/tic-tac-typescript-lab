@@ -9,7 +9,7 @@ tie: boolean
 // Cached Element References ------------------
 
 const squareEls = document.querySelectorAll<HTMLDivElement>('.sqr')
-const messageEl = document.querySelector<HTMLHeadingElement>('#message')
+const messageEl = document.querySelector<HTMLHeadingElement>('#message')!
 
 // Event Listeners ----------------------------
 // Functions ----------------------------------
@@ -45,4 +45,16 @@ function updateBoard():void {
     :
     squareEls[idx].textContent = ''
   })
+}
+
+function updateMessage():void {
+  !winner && !tie
+  ?
+  messageEl.textContent = `It is player ${turn === 1 ? 1 : 2}'s turn`
+  :
+  !winner && tie
+  ?
+  messageEl.textContent = `It's a tie!`
+  :
+  messageEl.textContent = `Congratulations Player ${turn === 1 ? 1 : 2}, you won!`
 }
