@@ -15,10 +15,12 @@ let board, turn, winner, tie;
 // Cached Element References ------------------
 const squareEls = document.querySelectorAll('.sqr');
 const messageEl = document.querySelector('#message');
+const buttonEl = document.querySelector('#reset-btn');
 // Event Listeners ----------------------------
 squareEls.forEach(sqEl => {
     sqEl.addEventListener('click', handleClick);
 });
+buttonEl?.addEventListener('click', init);
 // Functions ----------------------------------
 function init() {
     board = [

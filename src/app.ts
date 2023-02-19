@@ -22,12 +22,14 @@ tie: boolean
 
 const squareEls = document.querySelectorAll<HTMLDivElement>('.sqr')
 const messageEl = document.querySelector<HTMLHeadingElement>('#message')!
+const buttonEl = document.querySelector<HTMLButtonElement>('#reset-btn')
 
 // Event Listeners ----------------------------
 
 squareEls.forEach(sqEl => {
   sqEl.addEventListener('click', handleClick)
 })
+buttonEl?.addEventListener('click', init)
 
 // Functions ----------------------------------
 
