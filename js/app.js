@@ -64,4 +64,9 @@ function handleClick(evt) {
     const sqIdx = parseInt(evt.target.id.replace('sq', ''));
     if (board[sqIdx] || winner)
         return;
+    placePiece(sqIdx);
+    render();
+}
+function placePiece(sqIdx) {
+    board[sqIdx] = turn;
 }

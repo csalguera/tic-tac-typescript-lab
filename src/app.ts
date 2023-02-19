@@ -81,4 +81,10 @@ function handleClick(evt: MouseEvent):void {
   const sqIdx:number = parseInt((evt.target as HTMLButtonElement).id.replace('sq', ''))
 
   if (board[sqIdx] || winner) return
+  placePiece(sqIdx)
+  render()
+}
+
+function placePiece(sqIdx: number):void {
+  board[sqIdx] = turn
 }
