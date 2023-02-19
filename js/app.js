@@ -16,5 +16,21 @@ function init() {
         turn = 1,
         winner = false,
         tie = false;
+    render();
 }
 init();
+function render() {
+}
+function updateBoard() {
+    board.forEach((val, idx) => {
+        val === 1
+            ?
+                squareEls[idx].textContent = 'X'
+            :
+                val === -1
+                    ?
+                        squareEls[idx].textContent = 'O'
+                    :
+                        squareEls[idx].textContent = '';
+    });
+}

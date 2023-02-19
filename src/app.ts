@@ -23,6 +23,26 @@ function init():void {
   turn = 1,
   winner = false,
   tie = false
+
+  render()
 }
 
 init()
+
+function render():void {
+
+}
+
+function updateBoard():void {
+  board.forEach((val, idx) => {
+    val === 1
+    ?
+    squareEls[idx].textContent = 'X'
+    :
+    val === -1
+    ?
+    squareEls[idx].textContent = 'O'
+    :
+    squareEls[idx].textContent = ''
+  })
+}
