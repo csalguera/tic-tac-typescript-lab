@@ -61,5 +61,5 @@ function updateMessage() {
                     messageEl.textContent = `Congratulations Player ${turn === 1 ? 1 : 2}, you won!`;
 }
 function handleClick(evt) {
-    console.log(evt.target);
+    const sqIdx = parseInt(evt.target.id.replace('sq', ''));
 }

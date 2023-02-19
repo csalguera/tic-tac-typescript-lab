@@ -78,5 +78,5 @@ function updateMessage():void {
 }
 
 function handleClick(evt: MouseEvent):void {
-  console.log(evt.target);
+  const sqIdx:number = parseInt((evt.target as HTMLButtonElement).id.replace('sq', ''))
 }
